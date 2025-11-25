@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Coming Soon">
+    <meta name="theme-color" content="#000000">
+    
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Coming Soon">
+    <meta property="og:description" content="Something amazing is on its way.">
+    <meta property="og:image" content="assets/logo.png">
+    
+    <title>Coming Soon</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/logo.png">
+    <link rel="apple-touch-icon" href="assets/logo.png">
+    
+    <!-- Tailwind CSS v4 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            black: '#000000',
+                            white: '#ffffff',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="bg-black min-h-screen overflow-hidden cursor-crosshair">
+    
+    <!-- Three.js Canvas Container -->
+    <div id="canvas-container"></div>
+    
+    <!-- Grid Background -->
+    <div class="grid-bg"></div>
+    
+    <!-- Spotlight -->
+    <div class="spotlight" id="spotlight"></div>
+    
+    <!-- Noise Overlay -->
+    <div class="noise-overlay"></div>
+    
+    <!-- Vignette Effect -->
+    <div class="vignette"></div>
+    
+    <!-- Floating Particles Container -->
+    <div id="particles" class="fixed inset-0 pointer-events-none z-10"></div>
+    
+    <!-- Cursor trail -->
+    <div id="cursor-trail"></div>
+    
+    <!-- Main Content -->
+    <main class="relative z-20 min-h-screen flex items-center justify-center">
+        
+        <!-- Orbit Rings -->
+        <div class="absolute flex items-center justify-center">
+            <div class="orbit-ring w-[350px] h-[350px] absolute" style="animation-duration: 25s;"></div>
+            <div class="orbit-ring w-[450px] h-[450px] absolute" style="animation-duration: 35s; animation-direction: reverse;"></div>
+            <div class="orbit-ring w-[550px] h-[550px] absolute" style="animation-duration: 45s;"></div>
+            <div class="orbit-ring w-[650px] h-[650px] absolute opacity-50" style="animation-duration: 55s; animation-direction: reverse;"></div>
+        </div>
+        
+        <!-- Logo Container with 3D Effect -->
+        <div class="logo-container relative flex flex-col items-center" id="logo-wrapper">
+            
+            <!-- Scanner Line -->
+            <div class="scanner-line"></div>
+            
+            <!-- Main Logo -->
+            <div class="logo-3d relative" id="logo-3d">
+                <img 
+                    src="assets/logo.png" 
+                    alt=""
+                    class="w-48 h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 object-contain select-none"
+                    id="main-logo"
+                    draggable="false"
+                />
+                
+                <!-- Glitch Layers -->
+                <img 
+                    src="assets/logo.png" 
+                    alt=""
+                    class="glitch-layer w-48 h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 object-contain"
+                    style="filter: hue-rotate(90deg) brightness(1.5);"
+                    draggable="false"
+                />
+                <img 
+                    src="assets/logo.png" 
+                    alt=""
+                    class="glitch-layer w-48 h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 object-contain"
+                    style="filter: hue-rotate(180deg) brightness(1.5);"
+                    draggable="false"
+                />
+            </div>
+            
+            <!-- Reflection -->
+            <div class="reflection mt-4">
+                <img 
+                    src="assets/logo.png" 
+                    alt=""
+                    class="w-48 h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 object-contain"
+                    draggable="false"
+                />
+            </div>
+        </div>
+        
+    </main>
+    
+    <!-- Main Script -->
+    <script src="script.js"></script>
+</body>
+</html>
